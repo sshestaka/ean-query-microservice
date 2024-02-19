@@ -2,7 +2,7 @@
 
 ## Introduction
 
-**The EAN Query Microservice is designed to provide product details based on the European Article Number (EAN) code associated with Mercadona products. 
+**The EAN Query Microservice is designed to provide product details based on the European Article Number (EAN) code associated with Supplier products. 
 This service exposes a REST API that allows users to query product data, including basic product information, supplier details, and destination information.**
 
 ## Business Rules
@@ -12,10 +12,10 @@ EANs follow the format PPPPPPP+NNNNN+D, where:
 * NNNNN refers to the product code.
 * D refers to the destination digit.
 * The last digit of the EAN determines the destination of the product:
-* 1-5: Mercadona stores in Spain.
-* 6: Mercadona stores in Portugal.
+* 1-5: Supplier's stores in Spain.
+* 6: Supplier's stores in Portugal.
 * 8: Warehouses.
-* 9: Mercadona Offices.
+* 9: Supplier's Offices.
 * 0: Beehives.
 * EANs are composed of 13 numeric digits.
 * The supplier can be identified by the Hacendado number (8437008) or another supplier's number.
@@ -150,13 +150,13 @@ Product with number: 16007<br>
 Product with number: 12345<br>
 
 **Destination model with ENAM:**<br>
-MercadonaSpain (Set.of(1,2,3,4,5))<br>
-MercadonaPortugal (Set.of(6))<br>
+SupplierSpain (Set.of(1,2,3,4,5))<br>
+SupplierPortugal (Set.of(6))<br>
 Warehouses (Set.of(8))<br>
-MercadonaOffices (Set.of(9))<br>
+SupplierOffices (Set.of(9))<br>
 Colmenas (Set.of(0))<br>
 <br>
 <br>
 **Here is a list of the Postman request collections you can work with:<br>**
-[Mercadona EAN.postman_collection.json](Mercadona%20EAN.postman_collection.json)
+[EAN.postman_collection.json](EAN.postman_collection.json)
 <br>
