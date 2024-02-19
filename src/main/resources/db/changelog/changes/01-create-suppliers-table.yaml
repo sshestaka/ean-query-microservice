@@ -1,0 +1,52 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-suppliers-table
+      author: Sergey Shestaka
+      changes:
+        - createTable:
+            tableName: suppliers
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: code
+                  type: int
+                  constraints:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: name
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: eban
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: address
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: phone_number
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: description
+                  type: varchar(255)
+              - column:
+                  name: is_deleted
+                  type: boolean
+                  defaultValueBoolean: false
+                  constraints:
+                    nullable: false

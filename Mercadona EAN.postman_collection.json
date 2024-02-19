@@ -1,0 +1,337 @@
+{
+	"info": {
+		"_postman_id": "6bd51287-9059-4a35-8758-7fba0653bb54",
+		"name": "Mercadona EAN",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "30151017",
+		"_collection_link": "https://planetary-meteor-338560.postman.co/workspace/New-Team-Workspace~f69544d7-47fa-4809-97f3-bd0f4e85d371/collection/30151017-6bd51287-9059-4a35-8758-7fba0653bb54?action=share&source=collection_link&creator=30151017"
+	},
+	"item": [
+		{
+			"name": "REGISTER-USER",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"user1@gmail.com\",\r\n    \"password\": \"1234\",\r\n    \"repeatPassword\": \"1234\",\r\n    \"firstName\": \"user\",\r\n    \"lastName\": \"user\",\r\n    \"department\": \"Mercadona IY\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/auth/registration"
+			},
+			"response": []
+		},
+		{
+			"name": "LOGIN",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "1234",
+						"username": "serg@gmail.com"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"admin@gmail.com\",\r\n    \"password\": \"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/auth/login"
+			},
+			"response": []
+		},
+		{
+			"name": "ADD-SUPPLIER",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3MDgxOTQyMjIsImV4cCI6MTcwODE5NzIyMn0.BAFJtslrQ7Yt1_0RjvWCVV-qm3FfsbqTiBW0xiUr4LLeENuVgg29tqZ0DRVqzTXFaWdKzQ0soNdXgTYnkJxk5g"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"code\": 789,\r\n    \"name\": \"Supplier3\",\r\n    \"eban\": \"EBAN3\",\r\n    \"address\": \"Address3\",\r\n    \"phoneNumber\": \"789\",\r\n    \"description\": \"Description1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/suppliers"
+			},
+			"response": []
+		},
+		{
+			"name": "ADD-PRODUCT",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3MDgyODU4MjAsImV4cCI6MTcwODI4ODgyMH0.BQK0qXJ54iqle7wvMZZMCDAuxk7I98DJK3RcnAu9_VABX579_jCSfn0W2sywkWaUwJ6l147uWu9rQ0XSLVo1RA"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"code\": 123456789,\r\n    \"title\": \"title\",\r\n    \"category\": \"category\",\r\n    \"packaging\": \"box\",\r\n    \"rating\": \"MED\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/products"
+			},
+			"response": []
+		},
+		{
+			"name": "GET-ALL-SUPPLIERS",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3MDgxOTY5MTQsImV4cCI6MTcwODE5OTkxNH0.CSzKOvhoxScnkW1TizvpRXqk_SA_qu5zaFeXVHlTB1mWqasBHQ987-FwlLMn32IhPejunh0tSFq74DQMuiKOLg"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/suppliers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"suppliers"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "size",
+							"value": "100",
+							"disabled": true
+						},
+						{
+							"key": "sort",
+							"value": "price,DESC",
+							"disabled": true
+						},
+						{
+							"key": "sort",
+							"value": "author,DESC",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET-EAN-DETAILS",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3MDgyMDMyOTIsImV4cCI6MTcwODIwNjI5Mn0.ikmUWxKL3V3Q_j-AmweDbpuJjn4MK8WdWY-OyLlT3z1IReLvGOzlSv64IXE1LQrkKEf6hMWImJrlpAONYQnqUQ"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/eans/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"eans",
+						""
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "size",
+							"value": "100",
+							"disabled": true
+						},
+						{
+							"key": "sort",
+							"value": "price,DESC",
+							"disabled": true
+						},
+						{
+							"key": "sort",
+							"value": "author,DESC",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET-ALL-PRODUCTS",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3MDgyMDUwMjIsImV4cCI6MTcwODIwODAyMn0.nOoKetBY4oZHcLZFTwR6J9AYo93bL3aIt3o6Lx5OZOkVdRTQE7Pb4bI35BUzC2dNrsangIpRovvAF9YPhuJ78w"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"products"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "size",
+							"value": "100",
+							"disabled": true
+						},
+						{
+							"key": "sort",
+							"value": "price,DESC",
+							"disabled": true
+						},
+						{
+							"key": "sort",
+							"value": "author,DESC",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET-SUPPLIER-BY-CODE",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3MDgyODU4MjAsImV4cCI6MTcwODI4ODgyMH0.BQK0qXJ54iqle7wvMZZMCDAuxk7I98DJK3RcnAu9_VABX579_jCSfn0W2sywkWaUwJ6l147uWu9rQ0XSLVo1RA"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/suppliers/code/8437008"
+			},
+			"response": []
+		},
+		{
+			"name": "GET-PRODUCT-BY-CODE",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3MDgyODU4MjAsImV4cCI6MTcwODI4ODgyMH0.BQK0qXJ54iqle7wvMZZMCDAuxk7I98DJK3RcnAu9_VABX579_jCSfn0W2sywkWaUwJ6l147uWu9rQ0XSLVo1RA"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/products/code/45905"
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,21 @@
+databaseChangeLog:
+- changeSet:
+    id: insert-users
+    author: Sergey Shestaka
+    changes:
+      - insert:
+          tableName: users
+          columns:
+            - column: { name: email, value: "admin@gmail.com" }
+            - column: { name: password, value: "$2a$10$0HbWNKvJe64RDtGWgLEQCOh2k7mShKdYMQ094G/5XD0VDosds97e2" }
+            - column: { name: first_name, value: "Sergey" }
+            - column: { name: last_name, value: "Shestaka" }
+            - column: { name: department, value: "Mercadona IT" }
+      - insert:
+          tableName: users
+          columns:
+            - column: { name: email, value: "user@gmail.com" }
+            - column: { name: password, value: "$2a$10$0HbWNKvJe64RDtGWgLEQCOh2k7mShKdYMQ094G/5XD0VDosds97e2" }
+            - column: { name: first_name, value: "User" }
+            - column: { name: last_name, value: "User" }
+            - column: { name: department, value: "Mercadona IT" }

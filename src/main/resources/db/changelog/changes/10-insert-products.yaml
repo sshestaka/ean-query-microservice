@@ -1,0 +1,29 @@
+databaseChangeLog:
+- changeSet:
+    id: insert-products
+    author: Sergey Shestaka
+    changes:
+      - insert:
+          tableName: products
+          columns:
+            - column: { name: code, value: 45905 }
+            - column: { name: title, value: "Cerveza" }
+            - column: { name: category, value: "Alcohol" }
+            - column: { name: packaging, value: "Caja" }
+            - column: { name: rating, value: "HIGH" }
+      - insert:
+          tableName: products
+          columns:
+            - column: { name: code, value: 16007 }
+            - column: { name: title, value: "Jamón" }
+            - column: { name: category, value: "Delicadeza" }
+            - column: { name: packaging, value: "Pierna" }
+            - column: { name: rating, value: "MED" }
+      - insert:
+          tableName: products
+          columns:
+            - column: { name: code, value: 12345 }
+            - column: { name: title, value: "Leche" }
+            - column: { name: category, value: "Productos lácteos" }
+            - column: { name: packaging, value: "Paquete" }
+            - column: { name: rating, value: "HIGH" }

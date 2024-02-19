@@ -1,0 +1,32 @@
+databaseChangeLog:
+- changeSet:
+    id: insert-suppliers
+    author: Sergey Shestaka
+    changes:
+      - insert:
+          tableName: suppliers
+          columns:
+            - column: { name: code, value: 8437008 }
+            - column: { name: name, value: "Hacendado" }
+            - column: { name: eban, value: "EBAN:112233" }
+            - column: { name: address, value: "Valencia" }
+            - column: { name: phone_number, value: "+34634281418" }
+            - column: { name: description, value: "Mercadona's brands" }
+      - insert:
+          tableName: suppliers
+          columns:
+            - column: { name: code, value: 8480000 }
+            - column: { name: name, value: "Supplier-1" }
+            - column: { name: eban, value: "EBAN:445566" }
+            - column: { name: address, value: "Madrid" }
+            - column: { name: phone_number, value: "+34123456789" }
+            - column: { name: description, value: "Others brands" }
+      - insert:
+          tableName: suppliers
+          columns:
+            - column: { name: code, value: 8484884 }
+            - column: { name: name, value: "Supplier-2" }
+            - column: { name: eban, value: "EBAN:778899" }
+            - column: { name: address, value: "Malaga" }
+            - column: { name: phone_number, value: "+34987654321" }
+            - column: { name: description, value: "Others brands" }
