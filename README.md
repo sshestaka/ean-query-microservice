@@ -25,8 +25,6 @@ The project is built using Spring Boot and utilizes H2 database for data storage
 Swagger is integrated for API documentation, and Liquibase is used for pre-configuring the database. 
 Additionally, integration and unit tests have been implemented to ensure code quality and functionality.
 
-####  Welcome to a streamlined online book shopping journey with "Online Book Shop."
-
 ## Technologies and tools:
 * Java Development Kit (JDK) Version: 17
 * Apache Maven Version: 3.11.0
